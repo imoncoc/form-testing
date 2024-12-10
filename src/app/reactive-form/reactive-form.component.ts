@@ -52,8 +52,14 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signupForm);
+    if(this.signupForm.valid){
+      console.log(this.signupForm);
     this.signupForm.reset();
+    }
+    else{
+      this.signupForm.markAllAsTouched()
+    }
+
   }
 
   onAddHobby() {

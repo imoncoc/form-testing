@@ -2,18 +2,38 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <div [formGroup]="signupForm">
-        <label for="name">Name</label>
-        <input
-          id="name"
-          formControlName="name"
-          type="text"
-          class="form-control"
-        />
+        <div>
+          <label for="name">Name</label>
+          <input
+            id="name"
+            formControlName="name"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="name">Amount</label>
+          <input
+            id="amount"
+            formControlName="amount"
+            type="number"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="name">Quantity</label>
+          <input
+            id="quantity"
+            formControlName="quantity"
+            type="number"
+            class="form-control"
+          />
+        </div>
 
         <!-- Save Changes Button -->
         <button
           class="btn btn-primary mt-2"
-          [disabled]="!isNameSame()"
+          [disabled]="!isNameSame() && signupForm.invalid"
           (click)="onSaveChanges()"
         >
           Save Changes
